@@ -1,0 +1,8 @@
+{
+  "name": "Turk – Persönlicher Deutschtrainer",
+  "description": "Goethe-Zertifikat A1 sınavına hazırlık için Türkçe açıklamalı Almanca öğrenme ve pratik platformu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

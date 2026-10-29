@@ -1,0 +1,46 @@
+import React from 'react';
+
+interface LogoProps {
+  className?: string;
+  size?: number | string;
+  variant?: 'white' | 'burgundy';
+}
+
+export const Logo: React.FC<LogoProps> = ({
+  className = 'w-10 h-10',
+  size,
+  variant = 'burgundy',
+}) => {
+  const fillColor = variant === 'white' ? '#FFFFFF' : '#800020';
+
+  return (
+    <svg
+      viewBox="0 0 1000 1000"
+      className={className}
+      style={size ? { width: size, height: size } : undefined}
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="Turk – Persönlicher Deutschtrainer Logo"
+    >
+      <g fill={fillColor}>
+        {/* Top-Right Ribbon crossing to Lower-Left */}
+        <path d="M 855,305 L 565,305 C 475,305 400,380 320,535 L 398,535 C 455,420 515,355 600,355 L 760,355 L 630,450 L 585,410 C 625,380 670,355 760,355 L 760,450 L 855,305 Z" />
+
+        {/* Top-Left Ribbon crossing to Lower-Right */}
+        <path d="M 145,305 L 435,305 C 525,305 600,380 680,535 L 602,535 C 545,420 485,355 400,355 L 240,355 L 370,450 L 415,410 C 375,380 330,355 240,355 L 240,450 L 145,305 Z" />
+
+        {/* Left Upper Wing Cutout & Diagonal Arm */}
+        <path d="M 145,305 L 240,450 L 415,450 L 485,380 C 440,355 360,355 240,355 L 145,305 Z" />
+
+        {/* Right Upper Wing Cutout & Diagonal Arm */}
+        <path d="M 855,305 L 760,450 L 585,450 L 515,380 C 560,355 640,355 760,355 L 855,305 Z" />
+
+        {/* Central Left Nib / Pillar Base */}
+        <path d="M 492,510 L 492,698 L 420,626 L 390,600 L 440,550 C 428,520 422,485 420,450 L 455,415 C 460,460 472,490 492,510 Z" />
+
+        {/* Central Right Nib / Pillar Base */}
+        <path d="M 508,510 L 508,698 L 580,626 L 610,600 L 560,550 C 572,520 578,485 580,450 L 545,415 C 540,460 528,490 508,510 Z" />
+      </g>
+    </svg>
+  );
+};
