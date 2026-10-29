@@ -13,6 +13,7 @@ export const A1_QUESTIONS: ExamQuestion[] = [
       "Almanca'da resmi/nezaket hitabı olan 'Sie' (Siz) zamirinde fiil sonuna '-en' takısı gelir: 'Sie kommen'. 'du' için 'kommst', 'er/sie' için 'kommt', 'ich' için 'komme' olur.",
     difficulty: 'A1.1',
     tag: 'Fiil Çekimi (Konjugation)',
+    a1ExamHint: "Dil Bilgisi İpucu: Resmi 'Sie' (Siz) hitabında fiil çekimi daima '-en' ile biter ('Sie kommen'). Kendinize güvenin!",
   },
   {
     id: 'g2',
@@ -25,6 +26,7 @@ export const A1_QUESTIONS: ExamQuestion[] = [
       "'Bruder' (erkek kardeş) eril bir isimdir ('der Bruder') ve burada cümlenin öznesi (Nominativ) konumundadır. Bu yüzden 'Mein Bruder' kullanılır. 'Meine' dişil/çoğul, 'Meinen' Akkusativ içindir.",
     difficulty: 'A1.1',
     tag: 'İyelik Zamirleri',
+    a1ExamHint: "Dil Bilgisi İpucu: 'der Bruder' eril isimdir ve burada cümlenin öznesidir (Nominativ). Eril Nominativ için 'Mein' kullanılır.",
   },
   {
     id: 'g3',
@@ -37,6 +39,7 @@ export const A1_QUESTIONS: ExamQuestion[] = [
       "Modal fiillerle (möchten, können, müssen vb.) kurulan cümlelerde asıl fiil cümlenin en sonuna gider ve çekimlenmeden yalın (Infinitiv) halde kalır: 'möchten ... sehen'.",
     difficulty: 'A1.1',
     tag: 'Modalverben',
+    a1ExamHint: "Dil Bilgisi İpucu: Cümlede modal fiil ('möchten') varsa, ikinci fiil cümlenin en sonuna mastar (yalın / -en) halinde gider!",
   },
   {
     id: 'g4',
@@ -49,6 +52,7 @@ export const A1_QUESTIONS: ExamQuestion[] = [
       "'Bahnhof' eril bir kelimedir ('der Bahnhof'). 'Suchen' fiili belirtili nesne (Akkusativ - -i hali) alır. Eril isimlerde 'der' artikeli Akkusativ'de 'den' haline dönüşür.",
     difficulty: 'A1.2',
     tag: 'Akkusativ (-i hali)',
+    a1ExamHint: "Dil Bilgisi İpucu: 'suchen' fiili Akkusativ (-i hali) gerektirir. Sadece eril 'der' artikeli Akkusativ'de 'den' olur, diğerleri değişmez!",
   },
   {
     id: 'g5',
@@ -61,6 +65,7 @@ export const A1_QUESTIONS: ExamQuestion[] = [
       "'Hereinkommen' (içeri gelmek) ayrılabilen bir fiildir. Emir veya kibar ricada ön ek sona gider: 'Kommen Sie bitte herein!'.",
     difficulty: 'A1.2',
     tag: 'Trennbare Verben (Ayrılabilen Fiiller)',
+    a1ExamHint: "Dil Bilgisi İpucu: Ayrılabilen fiillerde (Trennbare Verben) fiil kökü öne gelirken, ön ek ('herein-') cümlenin en sonuna gider.",
   },
   {
     id: 'g6',
@@ -73,6 +78,7 @@ export const A1_QUESTIONS: ExamQuestion[] = [
       "'mit' edatı daima Dativ (-e/-de hali) gerektirir. 'der Bus' eril bir isimdir ve Dativ halinde 'dem' olur: 'mit dem Bus'.",
     difficulty: 'A1.2',
     tag: 'Dativ Präpositionen (mit)',
+    a1ExamHint: "Dil Bilgisi İpucu: 'mit' edatı her zaman Dativ ister! 'der Bus' Dativ'de 'dem' olur ('mit dem Bus'). Harika gidiyorsunuz!",
   },
   {
     id: 'g7',
@@ -85,6 +91,7 @@ export const A1_QUESTIONS: ExamQuestion[] = [
       "Artikeli olmayan veya belirsiz artikelli isimleri olumsuz yapmak için 'kein' kullanılır. 'Kaffee' erildir ('der Kaffee') ve içmek fiili nesne aldığından Akkusativ'de 'keinen Kaffee' olur.",
     difficulty: 'A1.1',
     tag: 'Negation (nicht vs kein)',
+    a1ExamHint: "Dil Bilgisi İpucu: İsimleri olumsuz yaparken 'kein' kullanılır. 'der Kaffee' Akkusativ nesne olduğu için 'keinen' formunu alır.",
   },
   {
     id: 'g8',
@@ -97,6 +104,7 @@ export const A1_QUESTIONS: ExamQuestion[] = [
       "'können' (yapabilmek) fiili 'wir' öznesi için 'können' şeklinde çekimlenir: 'Am Sonntag können wir lange schlafen.'",
     difficulty: 'A1.1',
     tag: 'Modalverb (können)',
+    a1ExamHint: "Dil Bilgisi İpucu: 'wir' (biz) zamiri için modal fiil çekimi çoğuldur ve mastar haliyle aynı kalır: 'wir können'.",
   },
 
   // --- WORTSCHATZ (Kelime Bilgisi) ---
@@ -195,6 +203,7 @@ Ihr Sprachschul-Team`,
       "Metinde 'die Sprachschule ist am Freitag, dem 1. Mai ... geschlossen' (1 Mayıs Cuma günü kapalıdır) ifadesi yer almaktadır. Dolayısıyla o gün ders yoktur.",
     difficulty: 'A1.1',
     tag: 'Goethe Lesen Teil 1',
+    a1ExamHint: "Sınav Stratejisi (Scanning): Metnin tamamını anlamaya çalışıp vakit kaybetmeyin. Sorudaki 'Wann' (Ne zaman) soru kökünü ve 'geschlossen' (kapalı) kelimesini metinde tarayın. Cevap doğrudan gözünüze çarpacaktır!",
   },
   {
     id: 'r2',
@@ -218,6 +227,7 @@ Liebe Grüße, Markus`,
       "Metinde açıkça 'Kannst du bitte einen Salat oder Kuchen mitbringen?' (Lütfen bir salata veya kek getirebilir misin?) sorulmuştur.",
     difficulty: 'A1.1',
     tag: 'Goethe Lesen Teil 2',
+    a1ExamHint: "Sınav Stratejisi: 'mitbringen' (yanında getirmek) ayrılabilen bir fiildir. E-postadaki soru cümlesini ('Kannst du ... mitbringen?') doğrudan bulun. Dikkatli bir bakış yeterli, harika gidiyorsunuz!",
   },
   {
     id: 'r3',
@@ -241,6 +251,7 @@ Sonntags geschlossen!`,
       "İlanda 'Samstag: 08:00 – 16:00 Uhr' yazmaktadır. Saat 18:00'de market kapalı olduğundan alışveriş yapılamaz.",
     difficulty: 'A1.2',
     tag: 'Goethe Lesen Teil 3',
+    a1ExamHint: "Sınav Stratejisi: Tabelalarda gün isimlerine ('Montag bis Freitag' vs 'Samstag') ve saat aralıklarına dikkat edin. 18:00 saati, cumartesi kapanış saati olan 16:00'dan sonradır!",
   },
   {
     id: 'r4',
@@ -262,6 +273,7 @@ In Notfällen wenden Sie sich bitte an die Praxis Dr. Müller, Tel: 030-456789.`
       "Metinde 'In Notfällen wenden Sie sich bitte an die Praxis Dr. Müller, Tel: 030-456789' (Acil durumlarda lütfen Dr. Müller kliniğine başvurunuz) denmektedir.",
     difficulty: 'A1.2',
     tag: 'Goethe Lesen Teil 3',
+    a1ExamHint: "Sınav Stratejisi: Sorudaki 'Notfall' (acil durum) kelimesini metinde gözünüzle arayın. Hemen yanındaki 'wenden Sie sich bitte an...' (lütfen ...'ya başvurun) yönlendirmesini bulun.",
   },
 
   // --- HÖREN (Dinleme Becerisi - Audio Destekli Goethe A1) ---
@@ -280,6 +292,7 @@ In Notfällen wenden Sie sich bitte an die Praxis Dr. Müller, Tel: 030-456789.`
       "Anonsta 'Der Intercity-Express nach München ... hat zehn Minuten Verspätung' (10 dakika rötarlıdır) denmektedir. Doğru yanıt: 10 Minuten.",
     difficulty: 'A1.1',
     tag: 'Goethe Hören Teil 1 (Anons)',
+    a1ExamHint: "Dinleme Stratejisi: İstasyon anonslarında tren yönü ('nach...') ve hemen ardından gelen 'Verspätung' (rötar) kelimesini yakalayın. 'Zehn' (10) sayısına odaklanın!",
   },
   {
     id: 'h2',
@@ -296,6 +309,7 @@ In Notfällen wenden Sie sich bitte an die Praxis Dr. Müller, Tel: 030-456789.`
       "Mesajda randevunun 'auf fünfzehn Uhr' (saat 15:00'e) ertelendiği belirtilmiştir ('verschoben werden').",
     difficulty: 'A1.2',
     tag: 'Goethe Hören Teil 2',
+    a1ExamHint: "Dinleme Stratejisi: Telesekreter mesajlarında saat değişikliklerine dikkat: 'auf ... verschoben werden' (saat ...'ye ertelendi) ifadesinden sonra telaffuz edilen yeni saate kulak verin!",
   },
   {
     id: 'h3',
@@ -312,6 +326,7 @@ In Notfällen wenden Sie sich bitte an die Praxis Dr. Müller, Tel: 030-456789.`
       "Satıcı 'heute im Angebot nur neununddreißig Euro' (bugün indirimde sadece 39 Euro) demiştir. 39 = neununddreißig.",
     difficulty: 'A1.1',
     tag: 'Goethe Hören Teil 1 (Sayılar)',
+    a1ExamHint: "Dinleme Stratejisi: Fiyat sorularında 'normalerweise' (normalde) ile 'im Angebot' (kampanyada/indirimde) arasındaki zıtlığa dikkat edin. İndirimli fiyatı yakalayın!",
   },
   {
     id: 'h4',
@@ -333,5 +348,6 @@ In Notfällen wenden Sie sich bitte an die Praxis Dr. Müller, Tel: 030-456789.`
       "Mesajda 'nicht im Café, sondern bei mir zu Hause' (kafede değil, benim evimde) denilmiştir. Dolayısıyla buluşma Lisa'nın evindedir.",
     difficulty: 'A1.2',
     tag: 'Goethe Hören Teil 2',
+    a1ExamHint: "Dinleme Stratejisi: 'nicht ... sondern ...' (orası değil, aksine burası) kalıbı Goethe A1 dinleme sınavının en yaygın çeldiricisidir! 'nicht im Café, sondern bei mir zu Hause' ayrımını yakalayın.",
   },
 ];

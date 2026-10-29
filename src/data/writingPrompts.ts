@@ -21,6 +21,8 @@ export const WRITING_PROMPTS: WritingPrompt[] = [
       'Familienname: Kaya | Vorname: Fatma | Straße: Kantstraße 12 | Wohnort: 10623 Berlin | Geburtsland: Türkei | Gewünschter Kurs: Intensivkurs A1',
     guidanceTurkish:
       'Formu doldururken büyük harfle ve yazım kurallarına uygun olarak bilgileri giriniz.',
+    a1ExamHint:
+      'Sınav Stratejisi (Teil 1 Formular): Bu bölümde toplam 5 boşluk bulunur ve her doğru alan 1 puandır (toplam 5 puan). Metindeki soyadı (Familienname), ad (Vorname), doğum ülkesi (Geburtsland) ve kurs türünü aynen form alanlarına aktarın. Küçük imla hatalarından korkmayın, anahtar kelimeyi doğru kutuya yazmak yeterlidir!',
     formFields: [
       { labelGerman: 'Familienname', labelTurkish: 'Soyadı', correctValue: 'Kaya' },
       { labelGerman: 'Vorname', labelTurkish: 'Adı', correctValue: 'Fatma' },
@@ -64,6 +66,8 @@ Viele Grüße,
 Ahmet`,
     guidanceTurkish:
       'Goethe A1 mektuplarında şu 4 unsura dikkat edin: 1) Hitap (Lieber Thomas,), 2) Teşekkür, 3) Katılım onayı, 4) Ne getireyim sorusu, 5) Vedalaşma (Viele Grüße,) ve adınız.',
+    a1ExamHint:
+      'Dil Bilgisi & Sınav Stratejisi: 1) Arkadaşa yazarken daima "Lieber [Erkek Adı]," veya "Liebe [Kadın Adı]," ile başlayın (virgülden sonra küçük harfle devam edilir). 2) Soru kökündeki 3 maddeyi (Punkte) ayrı ayrı cümlelerde yanıtlayın. 3) Kapanışta "Viele Grüße" ve adınızı yazmanız jüriden en az 2 tam puan garantiler!',
   },
   {
     id: 'wr-t2-excuse',
@@ -90,5 +94,7 @@ Mit freundlichen Grüßen,
 Emre Demir`,
     guidanceTurkish:
       'Resmi öğretmen hitabı için "Sehr geehrte Frau Müller," kullanılır. Kapanışta "Mit freundlichen Grüßen" ifadesini seçin.',
+    a1ExamHint:
+      'Dil Bilgisi & Sınav Stratejisi: 1) Resmi e-postada hitap: "Sehr geehrte Frau Müller," (kadın) veya "Sehr geehrter Herr..." (erkek). 2) Mazeret bildirirken "weil ich krank bin" (weil yan cümlesinde fiil sonda!) veya basitçe "Ich bin krank." kalıbını kullanın. 3) Kapanış selamı: "Mit freundlichen Grüßen,". Harika bir resmi şablon!',
   },
 ];

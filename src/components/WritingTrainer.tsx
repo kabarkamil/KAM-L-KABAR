@@ -8,6 +8,7 @@ import {
   Send,
   Eye,
   Check,
+  Lightbulb,
 } from 'lucide-react';
 import { WritingPrompt } from '../types.js';
 import { WRITING_PROMPTS } from '../data/writingPrompts.js';
@@ -31,6 +32,7 @@ export const WritingTrainer: React.FC<WritingTrainerProps> = ({
   const [studentText, setStudentText] = useState('');
   const [formInputs, setFormInputs] = useState<Record<string, string>>({});
   const [showSample, setShowSample] = useState(false);
+  const [showHint, setShowHint] = useState(false);
   const [evaluation, setEvaluation] = useState<{
     score: number;
     passed: boolean;
@@ -121,6 +123,7 @@ export const WritingTrainer: React.FC<WritingTrainerProps> = ({
                   setFormInputs({});
                   setEvaluation(null);
                   setShowSample(false);
+                  setShowHint(false);
                 }}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition ${
                   selectedPromptIndex === idx
@@ -162,6 +165,36 @@ export const WritingTrainer: React.FC<WritingTrainerProps> = ({
               <span>{prompt.situationTurkish}</span>
             </div>
           </div>
+
+          {/* Action Row: Hint Button */}
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              onClick={() => setShowHint(!showHint)}
+              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition border cursor-pointer active:scale-95 ${
+                showHint
+                  ? 'bg-amber-100 text-amber-950 border-amber-300 shadow-2xs'
+                  : 'bg-amber-50 text-amber-900 border-amber-200 hover:bg-amber-100'
+              }`}
+              title="Goethe A1 sınav stratejisi ve ipucu al"
+            >
+              <Lightbulb className={`w-3.5 h-3.5 ${showHint ? 'text-amber-700 fill-amber-500' : 'text-amber-600'}`} />
+              <span>{showHint ? 'İpucunu Gizle' : 'İpucu Ver'}</span>
+            </button>
+          </div>
+
+          {/* Motivating Goethe A1 Hint Card */}
+          {showHint && (
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-3.5 text-xs sm:text-sm text-amber-950 space-y-1 animate-in fade-in duration-200">
+              <div className="flex items-center gap-1.5 font-bold text-amber-900 text-xs uppercase tracking-wide">
+                <Lightbulb className="w-4 h-4 text-amber-600 fill-amber-500 shrink-0" />
+                <span>Goethe-Zertifikat A1 Yazma (Schreiben) & Dil Bilgisi İpucu</span>
+              </div>
+              <p className="leading-relaxed text-amber-900/90 pl-5">
+                {prompt.a1ExamHint || 'Sorudaki 3 maddeyi ayrı cümlelerde yanıtlayın ve selamlama kalıplarını unutmayın!'}
+              </p>
+            </div>
+          )}
 
           {/* Teil 1: Formular ausfüllen */}
           {prompt.type === 'formular' && prompt.formFields && (

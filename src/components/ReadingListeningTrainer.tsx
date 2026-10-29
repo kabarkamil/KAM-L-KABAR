@@ -7,6 +7,7 @@ import {
   XCircle,
   HelpCircle,
   RotateCcw,
+  Lightbulb,
 } from 'lucide-react';
 import { ExamQuestion } from '../types.js';
 import { A1_QUESTIONS } from '../data/questions.js';
@@ -30,6 +31,7 @@ export const ReadingListeningTrainer: React.FC<ReadingListeningTrainerProps> = (
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const [showHint, setShowHint] = useState(false);
 
   const currentQ = questions[currentIndex] || questions[0];
 
@@ -42,6 +44,7 @@ export const ReadingListeningTrainer: React.FC<ReadingListeningTrainerProps> = (
 
   const handleNext = () => {
     setSelectedOption(null);
+    setShowHint(false);
     setCurrentIndex((prev) => (prev + 1) % questions.length);
   };
 
@@ -118,23 +121,38 @@ export const ReadingListeningTrainer: React.FC<ReadingListeningTrainerProps> = (
             </div>
           )}
 
-          {/* Question German and Audio button */}
-          <div className="flex items-start justify-between gap-3">
-            <div className="space-y-1">
-              <h3 className="text-base sm:text-lg font-bold text-stone-900">
-                {currentQ.questionGerman}
-              </h3>
-              {currentQ.questionTurkishPrompt && (
-                <p className="text-xs text-stone-500 italic">
-                  💡 {currentQ.questionTurkishPrompt}
-                </p>
-              )}
-            </div>
+          {/* Question German and Prompt */}
+          <div className="space-y-1">
+            <h3 className="text-base sm:text-lg font-bold text-stone-900">
+              {currentQ.questionGerman}
+            </h3>
+            {currentQ.questionTurkishPrompt && (
+              <p className="text-xs text-stone-500 italic">
+                💡 {currentQ.questionTurkishPrompt}
+              </p>
+            )}
+          </div>
+
+          {/* Action Row: Hint Button and Audio Play Button */}
+          <div className="flex items-center justify-between gap-2 pt-1 pb-1">
+            <button
+              type="button"
+              onClick={() => setShowHint(!showHint)}
+              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition border cursor-pointer active:scale-95 ${
+                showHint
+                  ? 'bg-amber-100 text-amber-950 border-amber-300 shadow-2xs'
+                  : 'bg-amber-50 text-amber-900 border-amber-200 hover:bg-amber-100'
+              }`}
+              title="Goethe A1 sınav stratejisi ve ipucu al"
+            >
+              <Lightbulb className={`w-3.5 h-3.5 ${showHint ? 'text-amber-700 fill-amber-500' : 'text-amber-600'}`} />
+              <span>{showHint ? 'İpucunu Gizle' : 'İpucu Ver'}</span>
+            </button>
 
             <button
               type="button"
               onClick={() => handlePlayAudio(currentQ.audioText || currentQ.questionGerman)}
-              className={`p-2.5 rounded-xl text-white font-medium transition shrink-0 ${
+              className={`p-2 rounded-lg text-white font-medium transition shrink-0 ${
                 isPlayingAudio ? 'bg-amber-600 animate-pulse' : 'bg-[#800020] hover:bg-[#68001a]'
               }`}
               title="Almanca sesi dinle"
@@ -143,6 +161,19 @@ export const ReadingListeningTrainer: React.FC<ReadingListeningTrainerProps> = (
               <Volume2 className="w-4 h-4" />
             </button>
           </div>
+
+          {/* Motivating Goethe A1 Hint Card */}
+          {showHint && (
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-3.5 text-xs sm:text-sm text-amber-950 space-y-1 animate-in fade-in duration-200">
+              <div className="flex items-center gap-1.5 font-bold text-amber-900 text-xs uppercase tracking-wide">
+                <Lightbulb className="w-4 h-4 text-amber-600 fill-amber-500 shrink-0" />
+                <span>Goethe-Zertifikat A1 Sınav & Dil Bilgisi İpucu</span>
+              </div>
+              <p className="leading-relaxed text-amber-900/90 pl-5">
+                {currentQ.a1ExamHint || 'Sorudaki anahtar kelimelere ve bağlama odaklanarak seçenekleri eleyin. Başarırsınız!'}
+              </p>
+            </div>
+          )}
 
           {/* 4 Options */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

@@ -10,6 +10,7 @@ import {
   Sparkles,
   Clock,
   BookOpen,
+  Lightbulb,
 } from 'lucide-react';
 import { ExamQuestion, QuestionAnswer, ExamResult, SkillCategory } from '../types.js';
 import { A1_QUESTIONS } from '../data/questions.js';
@@ -34,6 +35,7 @@ export const ExamMode: React.FC<ExamModeProps> = ({
   const [examFinished, setExamFinished] = useState(false);
   const [completedResult, setCompletedResult] = useState<ExamResult | null>(null);
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const [showHint, setShowHint] = useState(false);
   const [roundStartTime, setRoundStartTime] = useState<number>(Date.now());
 
   // Function to initialize 5 questions based on category
@@ -58,6 +60,7 @@ export const ExamMode: React.FC<ExamModeProps> = ({
     setAnswers([]);
     setExamFinished(false);
     setCompletedResult(null);
+    setShowHint(false);
     setRoundStartTime(Date.now());
   };
 
@@ -103,6 +106,7 @@ export const ExamMode: React.FC<ExamModeProps> = ({
       setCurrentIndex((prev) => prev + 1);
       setSelectedOption(null);
       setIsAnswerSubmitted(false);
+      setShowHint(false);
     } else {
       setExamFinished(true);
     }
@@ -240,6 +244,36 @@ export const ExamMode: React.FC<ExamModeProps> = ({
                 </p>
               )}
             </div>
+
+            {/* Hint Action Row */}
+            <div className="flex items-center justify-between gap-2 pt-0.5">
+              <button
+                type="button"
+                onClick={() => setShowHint(!showHint)}
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition border cursor-pointer active:scale-95 ${
+                  showHint
+                    ? 'bg-amber-100 text-amber-950 border-amber-300 shadow-2xs'
+                    : 'bg-amber-50 text-amber-900 border-amber-200 hover:bg-amber-100'
+                }`}
+                title="Goethe A1 sınav stratejisi ve ipucu al"
+              >
+                <Lightbulb className={`w-3.5 h-3.5 ${showHint ? 'text-amber-700 fill-amber-500' : 'text-amber-600'}`} />
+                <span>{showHint ? 'İpucunu Gizle' : 'İpucu Ver'}</span>
+              </button>
+            </div>
+
+            {/* Hint Box */}
+            {showHint && (
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-3.5 text-xs sm:text-sm text-amber-950 space-y-1 animate-in fade-in duration-200">
+                <div className="flex items-center gap-1.5 font-bold text-amber-900 text-xs uppercase tracking-wide">
+                  <Lightbulb className="w-4 h-4 text-amber-600 fill-amber-500 shrink-0" />
+                  <span>Goethe-Zertifikat A1 Sınav & Dil Bilgisi İpucu</span>
+                </div>
+                <p className="leading-relaxed text-amber-900/90 pl-5">
+                  {currentQ.a1ExamHint || 'Sorudaki anahtar fiil çekimlerine ve ipuçlarına dikkat edin. Başarırsınız!'}
+                </p>
+              </div>
+            )}
 
             {/* 4 Options */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

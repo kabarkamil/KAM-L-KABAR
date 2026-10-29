@@ -12,6 +12,7 @@ export interface ExamQuestion {
   turkishExplanation: string;
   difficulty: 'A1.1' | 'A1.2';
   tag: string;
+  a1ExamHint?: string; // Goethe-Zertifikat A1 exam strategy and motivating grammar hint
 }
 
 export interface QuestionAnswer {
@@ -87,6 +88,7 @@ export interface WritingPrompt {
   sampleSolution: string;
   minWords?: number;
   guidanceTurkish: string;
+  a1ExamHint?: string; // Motivating exam strategy hint
   formFields?: {
     labelGerman: string;
     labelTurkish: string;
